@@ -1,0 +1,10 @@
+<ul class="nav nav-pills">
+	<li <?php echo $this->uri->segment(4) == '' ? 'class="active"' : '' ?>>
+		<a href="<?php echo site_url(SITE_AREA .'/reports/po_transactions') ?>" id="list"><?php echo lang('po_transactions_list'); ?></a>
+	</li>
+	<?php if ($this->auth->has_permission('PO_Transactions.Reports.Create')) : ?>
+	<li <?php echo $this->uri->segment(4) == 'create' ? 'class="active"' : '' ?> >
+		<a href="<?php echo site_url(SITE_AREA .'/reports/po_transactions/create') ?>" id="create_new"><?php echo lang('po_transactions_new'); ?></a>
+	</li>
+	<?php endif; ?>
+</ul>
